@@ -1,0 +1,131 @@
+*,*::after, *::before {
+    box-sizing: border-box;
+
+}
+
+body {
+   margin: auto;
+   
+}
+
+.video_container {
+  
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    
+    /* background:red; */
+   
+    
+
+
+ 
+}
+
+      
+
+
+video {
+     width: 100%; 
+    
+
+}
+
+/* play push button  */
+
+.video_container .video_controls_container {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    color: red;
+    z-index: 100;
+    opacity: 0;
+    transition: .15s;
+}
+
+/* .video_container .video_controls_container::before {
+    position: absolute;
+    content: " ";
+    bottom: 0;
+    background-color: blue;
+    width: 100%;
+    aspect-ratio: 6/1;
+    z-index: -1;
+    pointer-events: none;
+
+
+} */
+.video_container:hover .video_controls_container,
+.video_container:focus-within .video_controls_container,
+.video_container.paused .video_controls_container {
+
+    opacity: 1;
+
+}
+
+.video_container .video_controls_container .controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.video_container .video_controls_container .controls button {
+    padding: 0;
+    background: none;
+    border: none;
+    /* font-size: 18px; */
+    color: inherit;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    opacity: 0.85;
+    transition: .15s;
+
+}
+
+.video_container .video_controls_container .controls button.play_pause_btn:hover {
+
+    opacity: 01;
+
+
+}
+
+.video_container.full-screen .video_controls_container .controls button.full-screen-btn .close,
+.video_container.theater .video_controls_container .controls button.theater-btn .tall ,
+.video_container.paused .video_controls_container .controls button.play_pause_btn .pause-icon {
+    display: none;
+
+}
+.video_container:not(.full-screen) .video_controls_container .controls button.full-screen-btn .open,
+.video_container:not(.theater) .video_controls_container .controls button.theater-btn .wide,
+.video_container:not(.paused) .video_controls_container .controls button.play_pause_btn .play-icon {
+    display: none;
+
+}
+
+/* play pause end  */
+
+/* theater button start */
+
+.video_container.theater video{
+        /* max-width: inherit; */
+        width: 100vw;
+        height: 90vh;
+        background:rgb(68, 68, 68);
+        margin: 0 !important;
+
+}
+.video_container.full_screen video{
+        /* max-width: inherit; */
+        width: 100vw;
+        height: 100vh;
+        /* background:rgb(68, 68, 68); */
+
+}
+
+
+.video_player_youtube{
+
+    width: 50%;
+}
